@@ -8,6 +8,7 @@ wb  = Workbook()
 ws = wb.active
 for row in c.execute('select * from lyrics'):
   for index, field in enumerate(row):
+    print field
     ws['A' + str(index)] = field
   
 wb.save('test.xlsx')
