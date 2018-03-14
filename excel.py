@@ -8,6 +8,7 @@ wb  = Workbook()
 ws = wb.active
 for row in c.execute('select * from lyrics'):
   TITLE, LYRICS, singer, lyrics, composition, arrangement, category = row
+  print TITLE
   ws['A' + str(1)] = TITLE
   ws['A' + str(2)] = LYRICS
   ws['A' + str(3)] = singer
