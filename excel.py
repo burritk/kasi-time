@@ -1,7 +1,7 @@
 from openpyxl import Workbook
 import sqlite3
 
-conn = sqlite.connect('kasi.db')
+conn = sqlite3.connect('kasi.db')
 c = conn.cursor()
 
 wb  = Workbook()
