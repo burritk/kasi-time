@@ -7,8 +7,13 @@ c = conn.cursor()
 wb  = Workbook()
 ws = wb.active
 for row in c.execute('select * from lyrics'):
-  for index, field in enumerate(row):
-    print field
-    ws['A' + str(index)] = field
+  TITLE, LYRICS, singer, lyrics, composition, arrangement, category = row
+  ws['A' + str(1)] = TITLE
+  ws['A' + str(2)] = LYRICS
+  ws['A' + str(3)] = singer
+  ws['A' + str(4)] = lyrics
+  ws['A' + str(5)] = composition
+  ws['A' + str(6)] = arrangement
+  ws['A' + str(7)] = category
   
 wb.save('test.xlsx')
