@@ -1,6 +1,7 @@
 import traceback
 import __future__
 import sqlite3
+import sys
 # from openpyxl.utils import get_column_letter
 
 from pyscraper.selenium_utils import get_headed_driver, wait_for_xpath, get_headless_driver
