@@ -23,15 +23,15 @@ try:
         if i == end: break
         try:
             driver.get('http://www.kasi-time.com/item-{}.html'.format(str(i)))
-            TITLE =         driver.find_elements_by_xpath('/html/body/div/div[2]/div/div/div[1]/div[2]/div/h1')[0].text.encode('utf-8')
-            LYRICS =        driver.find_elements_by_xpath('//*[@id="lyrics"]')[0].text.encode('utf-8')
-            singer =        driver.find_elements_by_xpath('/html/body/div/div[2]/div/div/div[1]/div[2]/div/div[1]/table/tbody/tr[1]/td/a')[0].text.encode('utf-8')
-            lyrics =        driver.find_elements_by_xpath('/html/body/div/div[2]/div/div/div[1]/div[2]/div/div[1]/table/tbody/tr[2]/td/a')[0].text.encode('utf-8')
-            composition =   driver.find_elements_by_xpath('/html/body/div/div[2]/div/div/div[1]/div[2]/div/div[1]/table/tbody/tr[3]/td/a')[0].text.encode('utf-8')
-            try: arrangement =   driver.find_elements_by_xpath('/html/body/div/div[2]/div/div/div[1]/div[2]/div/div[1]/table/tbody/tr[4]/td/a')[0].text.encode('utf-8')
-            except: traceback.print_exc(); arrangement = ''.encode('utf-8')
-            try: category =      driver.find_elements_by_xpath('/html/body/div/div[2]/div/div/div[1]/div[2]/div/div[2]/table/tbody/tr[1]/td/a')[0].text.encode('utf-8')
-            except: traceback.print_exc(); category = ''.encode('utf-8')
+            TITLE =         driver.find_elements_by_xpath('/html/body/div/div[2]/div/div/div[1]/div[2]/div/h1')[0].text
+            LYRICS =        driver.find_elements_by_xpath('//*[@id="lyrics"]')[0].text
+            singer =        driver.find_elements_by_xpath('/html/body/div/div[2]/div/div/div[1]/div[2]/div/div[1]/table/tbody/tr[1]/td/a')[0].text
+            lyrics =        driver.find_elements_by_xpath('/html/body/div/div[2]/div/div/div[1]/div[2]/div/div[1]/table/tbody/tr[2]/td/a')[0].text
+            composition =   driver.find_elements_by_xpath('/html/body/div/div[2]/div/div/div[1]/div[2]/div/div[1]/table/tbody/tr[3]/td/a')[0].text
+            try: arrangement =   driver.find_elements_by_xpath('/html/body/div/div[2]/div/div/div[1]/div[2]/div/div[1]/table/tbody/tr[4]/td/a')[0].text
+            except: traceback.print_exc(); arrangement = ''
+            try: category =      driver.find_elements_by_xpath('/html/body/div/div[2]/div/div/div[1]/div[2]/div/div[2]/table/tbody/tr[1]/td/a')[0].text
+            except: traceback.print_exc(); category = ''
             print(TITLE)
             query = "insert into lyrics values(?, ?, ?, ?, ?, ?, ?)"
             #print query
