@@ -35,7 +35,7 @@ try:
             print(TITLE)
             
             cursor.execute("insert into lyrics values('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}')".format(TITLE, LYRICS, singer, lyrics, composition, arrangement, category))
-            cursor.commit()
+            connection.commit()
         except:
             traceback.print_exc()
             errors += 1
