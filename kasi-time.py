@@ -43,5 +43,5 @@ try:
         print(i, errors)
 finally:
     connection.close()
-    wb.save('kasi' + '.xlsx')
+    #wb.save('kasi' + '.xlsx')
 
