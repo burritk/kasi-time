@@ -29,9 +29,9 @@ try:
             lyrics =        driver.find_elements_by_xpath('/html/body/div/div[2]/div/div/div[1]/div[2]/div/div[1]/table/tbody/tr[2]/td/a')[0].text.encode('utf-8')
             composition =   driver.find_elements_by_xpath('/html/body/div/div[2]/div/div/div[1]/div[2]/div/div[1]/table/tbody/tr[3]/td/a')[0].text.encode('utf-8')
             try: arrangement =   driver.find_elements_by_xpath('/html/body/div/div[2]/div/div/div[1]/div[2]/div/div[1]/table/tbody/tr[4]/td/a')[0].text.encode('utf-8')
-            except: traceback.print_exc(); arrangement = ''
+            except: traceback.print_exc(); arrangement = ''.encode('utf-8')
             try: category =      driver.find_elements_by_xpath('/html/body/div/div[2]/div/div/div[1]/div[2]/div/div[2]/table/tbody/tr[1]/td/a')[0].text.encode('utf-8')
-            except: traceback.print_exc(); category = ''
+            except: traceback.print_exc(); category = ''.encode('utf-8')
             print(TITLE)
             
             cursor.execute("insert into lyrics values('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}')".format(TITLE, LYRICS, singer, lyrics, composition, arrangement, category))
