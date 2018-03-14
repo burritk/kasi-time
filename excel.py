@@ -1,4 +1,5 @@
-from openpyxl import Workbook, get_column_letter
+from openpyxl import Workbook
+from openpyxl.utils import get_column_letter
 import sqlite3
 
 conn = sqlite3.connect('kasi.db')
