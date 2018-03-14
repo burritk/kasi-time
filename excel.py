@@ -9,6 +9,7 @@ wb  = Workbook()
 ws = wb.active
 for index, row in enumerate(c.execute('select * from lyrics')):
   for j, ro in enumerate(row):
+    if j==0: print ro
     ws[get_column_letter(j+1) + str(index+1)] = ro
     
 wb.save('test2.xlsx')
