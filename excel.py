@@ -6,8 +6,8 @@ c = conn.cursor()
 
 wb  = Workbook()
 ws = wb.active
-for index, row in enumerate(c.execute('select * from lyrics')):
-  print row
-  ws['A' + str(index)] = row
+for row in c.execute('select * from lyrics'):
+  for index, field in enumerate(row):
+    ws['A' + str(index)] = field
   
 wb.save('test.xlsx')
