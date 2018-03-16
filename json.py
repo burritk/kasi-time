@@ -1,11 +1,17 @@
 import sqlite3
 import json
 import os
+import sys
 
 conn = sqlite3.connect('kasi.db')
 c = conn.cursor()
 songs = []
-for row in c.execute('select * from lyrics'):
+limit = -1
+
+try: limit = int(sys.argv[1])
+except: pass
+
+for row in c.execute('select * from lyrics')[:limit]:
   song = {
     'title': row[0],
     'lyrics': row[1],
