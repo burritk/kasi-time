@@ -6,12 +6,16 @@ import sys
 conn = sqlite3.connect('kasi.db')
 c = conn.cursor()
 songs = []
-limit = -1
+limit = 100000
 
 try: limit = int(sys.argv[1])
 except: pass
 
-for row in c.execute('select * from lyrics')[:limit]:
+counter = 0
+for row in c.execute('select * from lyrics'):
+  counter += 1
+  if counter == limit: break
+  
   song = {
     'title': row[0],
     'lyrics': row[1],
