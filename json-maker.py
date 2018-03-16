@@ -17,13 +17,13 @@ for row in c.execute('select * from lyrics'):
   if counter == limit: break
   
   song = {
-    'title': row[0],
-    'lyrics': row[1],
-    'singer': row[2],
-    'author': row[3],
-    'composition': row[4],
-    'arrangement': row[5],
-    'category': row[6]
+    'title': row[0].encode('utf-8'),
+    'lyrics': row[1].encode('utf-8'),
+    'singer': row[2].encode('utf-8'),
+    'author': row[3].encode('utf-8'),
+    'composition': row[4].encode('utf-8'),
+    'arrangement': row[5].encode('utf-8'),
+    'category': row[6].encode('utf-8')
   }
   songs.append(song)
 
